@@ -1,3 +1,6 @@
+import { Conf } from "./Conf";
+import { Point2D, Vec2D } from "./Types";
+
 export function posToUV(pos: Point2D, conf: Conf): Point2D {
   const minSize = Math.min(window.innerWidth, window.innerHeight);
   const uv: Point2D = [
@@ -15,7 +18,7 @@ export const clientCordConv = (
   return posToUV([clientX, window.innerHeight - clientY - 1], conf);
 };
 
-export function firstLayer(x: Point2D, conf: Conf) {
+export function firstLayer(x: Point2D, conf: Conf): [Vec2D, string[]] {
   let u: [number, number] = conf.u0.slice() as Vec2D;
   let s: [number, number] = [0, 0];
   let spiketr: [string, string] = ["", ""];

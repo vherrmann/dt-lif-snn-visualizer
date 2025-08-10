@@ -1,6 +1,7 @@
 import { Point2D } from "./Types";
-import { conf, frontConf } from "./Globals";
 import { clientCordConv, countChar, firstLayer } from "./Helpers";
+import { frontConf } from "./Globals";
+import { conf } from "./Conf";
 import { requestRerender } from "./Rerender";
 
 export const initTooltip = () => {

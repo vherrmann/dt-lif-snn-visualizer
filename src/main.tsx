@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import fragmentShader from "./shaders/fragment.glsl";
-import { baseScale, conf } from "./Globals";
+import { baseScale } from "./Globals";
+import { conf } from "./Conf";
 import { requestRerender, rerender } from "./Rerender";
 import { Point2D } from "./Types";
 import { clientCordConv } from "./Helpers";
