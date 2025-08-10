@@ -1,6 +1,6 @@
 import { Point2D } from "./Types";
-import { clientCordConv, firstLayer } from "./Helpers";
 import { conf, frontConf } from "./Globals";
+import { clientCordConv, countChar, firstLayer } from "./Helpers";
 import { requestRerender } from "./Rerender";
 
 export const initTooltip = () => {
@@ -27,8 +27,9 @@ export const initTooltip = () => {
         tooltip.style.display = "block";
         const uv: Point2D = clientCordConv(event.clientX, event.clientY, conf);
         window.requestAnimationFrame(() => {
-          const st = firstLayer(uv, conf);
-          tooltip.innerHTML = `(${uv[0].toFixed(2)},${uv[1].toFixed(2)})<br>${st[0]}:${st[1]}`;
+          const [u, st] = firstLayer(uv, conf);
+          tooltip.innerHTML = `(${uv[0].toFixed(3)},${uv[1].toFixed(3)})<br>${u[0].toFixed(3)}:${u[1].toFixed(3)}<br>${st[0]}:${st[1]}<br>${countChar(st[0], "1")}:${countChar(st[1], "1")}`;
+
           if (frontConf.autoShowLeft) {
             conf.colorWithNumSpikes[0] = st[0].split("1").length - 1;
             conf.colorWithSpikeTrain[0] = Number("0b" + st[0]);
