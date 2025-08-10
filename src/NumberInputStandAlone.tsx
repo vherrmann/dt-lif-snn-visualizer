@@ -1,17 +1,4 @@
 import React from "react";
-import {
-  Box,
-  Checkbox,
-  Drawer,
-  Grid,
-  IconButton,
-  Input,
-  InputAdornment,
-  Stack,
-  styled,
-  TextField,
-  Typography,
-} from "@mui/material";
 import { NumberInput } from "./NumberInput";
 import { ParameterInput } from "./ParameterInput";
 export function NumberInputStandAlone({

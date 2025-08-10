@@ -25,7 +25,6 @@ export function ParamSlider({
   const handleChange = useCallback(
     (_: Event, newValue: number) => {
       const transformedValue = transformValue(newValue);
-      console.log(transformedValue);
       setValue(transformedValue);
       setValueIntern(transformedValue);
       requestRerender();

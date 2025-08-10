@@ -1,17 +1,4 @@
 import * as THREE from "three";
-import {
-  Box,
-  Checkbox,
-  Drawer,
-  Grid,
-  IconButton,
-  Input,
-  InputAdornment,
-  Stack,
-  styled,
-  TextField,
-  Typography,
-} from "@mui/material";
 import fragmentShader from "./shaders/fragment.glsl";
 import { baseScale, conf } from "./Globals";
 import { requestRerender, rerender } from "./Rerender";

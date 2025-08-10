@@ -31,7 +31,6 @@ export const initTooltip = () => {
           tooltip.innerHTML = `(${uv[0].toFixed(2)},${uv[1].toFixed(2)})<br>${st[0]}:${st[1]}`;
           if (frontConf.autoShowLeft) {
             conf.colorWithNumSpikes[0] = st[0].split("1").length - 1;
-            console.log(conf.colorWithNumSpikes);
             conf.colorWithSpikeTrain[0] = Number("0b" + st[0]);
           }
           if (frontConf.autoShowRight) {
