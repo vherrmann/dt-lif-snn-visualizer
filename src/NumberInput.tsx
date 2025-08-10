@@ -28,6 +28,7 @@ export function NumberInput({
     } else {
       try {
         const f = eval(`(x,a,b,c,sin,cos,exp) => ${str}`);
+        let currentValue: number = NaN;
         setIntervalId(
           setInterval(() => {
             try {
@@ -43,8 +44,11 @@ export function NumberInput({
               if (isNaN(evaluatedValue)) {
                 throw new Error("Evaluated value is NaN");
               }
-              setValue(evaluatedValue);
-              requestRerender();
+              if (currentValue !== evaluatedValue) {
+                setValue(evaluatedValue);
+                currentValue = evaluatedValue;
+                requestRerender();
+              }
             } catch (e) {
               intervalId && clearInterval(intervalId);
               console.error("Error evaluating expression:", e);
