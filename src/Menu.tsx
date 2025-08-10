@@ -145,28 +145,41 @@ export function Menu() {
             frontConf.autoShowRight = c;
           }}
         />
+        <CheckboxInput
+          paramName="Auto show prev"
+          defaultValue={conf.autoShowPrev}
+          onChange={(c) => {
+            conf.autoShowPrev = c;
+            requestRerender();
+          }}
+        />
         <Vec2DInput
           paramName="CWNS"
           defaultValue={conf.colorWithNumSpikes}
           setValue={(i, v) => (conf.colorWithNumSpikes[i] = v)}
         />
+        {/* <Vec2DInput
+          paramName="CWNSPREV"
+          defaultValue={conf.colorWithNumSpikesPrev}
+          setValue={(i, v) => (conf.colorWithNumSpikesPrev[i] = v)}
+        /> */}
         <Vec2DInput
           paramName="CWST"
           defaultValue={conf.colorWithSpikeTrain}
           setValue={(i, v) => (conf.colorWithSpikeTrain[i] = v)}
         />
-        <Vec2DInput
+        {/* <Vec2DInput
           paramName="CWSTPREV"
           defaultValue={conf.colorWithSpikeTrainPrev}
           setValue={(i, v) => (conf.colorWithSpikeTrainPrev[i] = v)}
-        />
+        /> */}
       </Drawer>
     </Box>
   );
 }
 
 export function initMenu() {
-  ReactDOM.createRoot(document.getElementById("menu")).render(
+  ReactDOM.createRoot(document.getElementById("menu")!).render(
     <React.StrictMode>
       <Menu />
     </React.StrictMode>,
